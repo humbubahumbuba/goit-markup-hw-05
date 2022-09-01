@@ -13,6 +13,7 @@ footer #2F303A*/
   --button-accent-color: #188ce8;
   --button-bg-color: #f5f4fa;
   --primary-link-color: #afb1b8;
+  --animation-dur-dir: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --card-set-gap: 30px;
   --card-shadow: rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -153,6 +154,9 @@ ol {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  position: relative;
+  transition: color var(--animation-dur-dir);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -162,6 +166,19 @@ ol {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+.site-nav .link.current::after {
+  content: "";
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 
 .auth-nav .item {
   display: flex;
@@ -170,10 +187,13 @@ ol {
 }
 .icon-envelope {
   margin-right: 10px;
+
+  /* transition: fill var(--animation-dur-dir); */
   /* width: 16px;
   height: 12px; */
 }
 .icon-smartphone {
+  /* transition: fill var(--animation-dur-dir); */
   margin-right: 10px;
   /* width: 10px;
   height: 16px; */
@@ -193,9 +213,12 @@ ol {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color var(--animation-dur-dir);
 }
 .contact-icon {
   fill: currentColor;
+  transition: fill var(--animation-dur-dir);
 }
 .auth-nav-link:hover,
 .auth-nav-link:focus {
@@ -274,6 +297,8 @@ ol {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 4px;
   border: none;
+
+  transition: background-color var(--animation-dur-dir);
 }
 
 /* ============features============= */
@@ -434,6 +459,9 @@ padding-left: 15px;
   border-radius: 50%;
   color: var(--primary-link-color);
   background-color: #ffffff;
+
+  transition: color var(--animation-dur-dir),
+    background-color var(--animation-dur-dir);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -485,6 +513,9 @@ padding-left: 15px;
   border-radius: 4px;
   color: var(--primary-link-color);
   fill: currentColor;
+
+  transition: border var(--animation-dur-dir), color var(--animation-dur-dir),
+    fill var(--animation-dur-dir);
 }
 
 .clients-link:hover,
@@ -585,8 +616,10 @@ padding-left: 15px;
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
-
   cursor: pointer;
+
+  transition: color var(--animation-dur-dir),
+    background-color var(--animation-dur-dir);
 }
 
 .select-button:hover,
@@ -653,6 +686,8 @@ padding-left: 15px;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  transition: color var(--animation-dur-dir);
 }
 .page-footer .link:hover,
 .page-footer .link:focus {
@@ -667,6 +702,8 @@ padding-left: 15px;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  transition: color var(--animation-dur-dir);
 }
 .adress-link:hover,
 .adress-link:focus {
@@ -719,8 +756,60 @@ padding-left: 15px;
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color var(--animation-dur-dir);
 }
 .join-list-link:hover,
 .join-list-link:focus {
   background-color: var(--accent-color);
+}
+/* ==================backdrop================= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition: opacity var(--animation-dur-dir),
+    visibility var(--animation-dur-dir);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 580px;
+  background-color: rgb(255, 255, 255);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #303030;
+  padding: 0;
 }
