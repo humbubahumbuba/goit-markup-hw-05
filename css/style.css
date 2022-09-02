@@ -385,6 +385,25 @@ padding-left: 15px;
   /* flex-wrap: wrap; */
   gap: 30px;
 }
+.works-style {
+  position: relative;
+}
+.works-text {
+  position: absolute;
+  bottom: 0;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: white;
+  padding-top: 27px;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.17;
+  text-transform: uppercase;
+}
 
 /*=================== our team ====================== */
 
@@ -637,6 +656,40 @@ padding-left: 15px;
   /* box-sizing: border-box;
   border: 1px solid #eeeeee;
   border-top: none; */
+}
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow-y: scroll;
+  transform: translateY(100%);
+  transition: tranform var(--animation-dur-dir);
+}
+.select-link:hover .overlay,
+.select-link:focus .overlay {
+  transform: translateY(0%);
+  transition: transform var(--animation-dur-dir);
 }
 
 /* =================footer================= */
