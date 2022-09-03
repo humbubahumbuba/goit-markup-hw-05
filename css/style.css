@@ -395,15 +395,18 @@ padding-left: 15px;
 
   background-color: rgba(47, 48, 58, 0.8);
   color: white;
-  padding-top: 27px;
+  /* padding-top: 27px; */
   height: 70px;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.03em;
+  /* letter-spacing: 0.03em; */
   line-height: 1.17;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*=================== our team ====================== */
@@ -534,8 +537,7 @@ padding-left: 15px;
   color: var(--primary-link-color);
   fill: currentColor;
 
-  transition: border var(--animation-dur-dir), color var(--animation-dur-dir),
-    fill var(--animation-dur-dir);
+  transition: border var(--animation-dur-dir), color var(--animation-dur-dir);
 }
 
 .clients-link:hover,
@@ -577,6 +579,10 @@ padding-left: 15px;
 .img-list {
   width: 370px;
 }
+/* .img-list:hover,
+.img-list:focus {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+} */
 
 .select-link {
   display: block;
@@ -587,10 +593,16 @@ padding-left: 15px;
 
   border: 1px solid #eeeeee;
   border-top: none;
+  transition: box-shadow var(--animation-dur-dir);
 }
+/* .portfolio-wrapper:hover,
+.portfolio-wrapper:focus {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+} */
 .select-link:hover,
 .select-link:focus {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .select {
@@ -639,7 +651,8 @@ padding-left: 15px;
   cursor: pointer;
 
   transition: color var(--animation-dur-dir),
-    background-color var(--animation-dur-dir);
+    background-color var(--animation-dur-dir),
+    box-shadow var(--animation-dur-dir);
 }
 
 .select-button:hover,
@@ -685,13 +698,18 @@ padding-left: 15px;
   padding-right: 24px;
   overflow-y: scroll;
   transform: translateY(100%);
-  transition: tranform var(--animation-dur-dir);
+  transition: transform var(--animation-dur-dir);
 }
 .select-link:hover .overlay,
 .select-link:focus .overlay {
   transform: translateY(0%);
-  transition: transform var(--animation-dur-dir);
+  /* transition: transform var(--animation-dur-dir); */
 }
+/* .overlay:hover,
+.overlay:focus {
+  transform: translateY(0%);
+  transition: transform var(--animation-dur-dir);
+} */
 
 /* =================footer================= */
 
