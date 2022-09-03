@@ -860,8 +860,9 @@ padding-left: 15px;
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  width: 0px;
-  height: 0px;
+  /* width: 0px;
+  height: 0px; */
+  transform: scale(0.1);
 }
 
 .modal {
@@ -869,10 +870,11 @@ padding-left: 15px;
   top: 50%;
   left: 50%;
 
-  transition: width 800ms cubic-bezier(0.4, 0, 0.2, 1),
-    height 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 700ms ease-in-out;
+  /* transition: width 800ms cubic-bezier(0.4, 0, 0.2, 1),
+    height 300ms cubic-bezier(0.4, 0, 0.2, 1); */
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 528px;
   height: 580px;
   background-color: rgb(255, 255, 255);
